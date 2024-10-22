@@ -1,7 +1,110 @@
- .sprite {
-            width: 50px;
-            height: 50px;
-            background-image: url('../img/Memory-monstres-10-paires-594.jpg');
-            background-repeat: no-repeat;
-            display: inline-block;
-        }
+body {
+    font-family: cursive;
+    text-align: center;
+}
+
+h1 {
+    color: #f3e521;
+    font-family: cursive;
+    font-size: 70px;
+}
+a {
+    color: #80f321;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Commence à 0 degrés */
+    }
+    to {
+        transform: rotate(360deg); /* Tourne à 360 degrés */
+    }
+}
+
+/* Applique l'animation à l'image */
+#interroge {
+    animation: rotate 2s infinite linear; /* L'image bouge en boucle */
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+}
+h3 {
+    color: #f3e521;
+    margin-top: 100px;
+}
+p {
+    color: azure;
+}
+h6 {
+    color: azure;
+    font-size: xx-large;
+}
+fieldset {
+    color: #f3e521;
+    margin-top: 100px;
+}
+form {
+    color: azure;
+}
+button {
+  background-color: #f81d1d;
+  font-family: cursive;
+  font-size:larger;
+}
+#error {
+    color: #6d0b0b;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    grid-gap: 120px;
+    justify-content: center;
+    margin: 0 auto; /* Centre la grille */
+    margin-top: 50px;
+}
+.card {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+    border: 2px solid #333;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.back {
+    background-color: #f81d1d;
+    transform: rotateY(180deg);
+}
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.front {
+    background-color: #fa4343;
+}
+
+* {
+    background-color: #697c35;
+}

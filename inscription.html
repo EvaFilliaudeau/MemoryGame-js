@@ -19,35 +19,44 @@
     </header>
     <main>
         <fieldset>
-            <legend>Créer un compte memory :</legend>
-                <form action="" method="post">
+            <legend>CREER UN COMPTE MEMORY :</legend>
+                <form action="/submit" method="post" id="signupForm">
                     <label for="name">Nom d'utilisateur</label> <br>
                         <input
                         type="texte"
-                        id="name"
-                        name="name"
-                        autofocus
+                        id="username"
+                        name="username"
                         required
-                        title="votre nom"
+                        minlength="3"
                         /> <br>
                     <label for="email">Adresse mail</label> <br>
                         <input
                         type="email"
                         id="email"
-                        title="votre adresse mail"
+                        required
                         /> <br>
-                    <label for="password">Créer un mot de passe</label> <br>
+                    <label for="password">Créez un mot de passe</label> <br>
                         <input
                         type="password"
                         id="password"
-                        title="votre mot de passe"
+                        minlength="6"
+                        required
                         /> <br>
-                    <label for="checkbox">Je souhaite m'abonner à la newsletter pour reçevoir des jeux de mémoire</label>
-                        <input type="checkbox" name="newsletter" id="newsletter"/> <br>
-                    <button type="submit">ENVOYER</button>
+                            <label for="confirmPassword">Confirmez le mot de passe</label> <br>
+                                <input
+                                type="password"
+                                id="confirmPassword"
+                                minlength="6"
+                                required
+                            /> <br><br
+
+                    <label for="checkbox">Je souhaite m'abonner à la newsletter pour recevoir des jeux de mémoire</label>
+                        <input type="checkbox" name="newsletter" id="newsletter"/> <br><br>
+                    <button type="submit">S'ENREGISTRER</button>
+                        <span id="error"></span>
             </form> <br>
         </fieldset>
     </main>
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/inscription.js"></script>
 </body>
 </html>

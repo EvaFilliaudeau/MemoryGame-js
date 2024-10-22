@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon projet memory</title>
     <link rel="stylesheet" href="css/style.css">
+     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,9 @@
                 <a href="compte.html">MON COMPTE</a>
             </nav>
     </header>
-
-    <script type="module" src="js/app.js"></script>
+        <div id="game-board" class="board">
+        </div>
+            <button id="confettiButton" hidden >Lancer les Confettis</button> 
+    <script type="module" src="js/jouer.js"></script>
 </body>
 </html>
