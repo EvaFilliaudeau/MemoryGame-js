@@ -1,20 +1,47 @@
-body {
-    font-family: cursive;
+    body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #8bc34a; /* Vert jungle doux */
+    background-image: url('../img/pexels-elias-tigiser-411757-2757549.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
     text-align: center;
+    background-attachment: fixed;
+
 }
 
 h1 {
-    color: #f3e521;
-    font-family: cursive;
+    color: #fff;
     font-size: 70px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Effet ombre pour le texte */
+    font-family: 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+}
+h3 {
+    color:  #ffeb3b;
+    margin-top: 100px;
+    font-size:50px;
+    margin-bottom: 1%;
+}
+h6 {
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
 }
 a {
-    color: #80f321;
+    color: #ffeb3b;
+    font-size: 24px;
 }
 nav {
     display: flex;
-    flex-direction: row;
-    justify-content:space-evenly
+    justify-content: space-evenly;
+    gap: 0.5%;
+    margin-bottom: 20px;
+}
+#interroge {
+    animation: rotate 2s infinite linear; /* L'image bouge en boucle */
+    width: 250px;
 }
 @keyframes rotate {
     from {
@@ -24,63 +51,36 @@ nav {
         transform: rotate(360deg); /* Tourne à 360 degrés */
     }
 }
-
-/* Applique l'animation à l'image */
-#interroge {
-    animation: rotate 2s infinite linear; /* L'image bouge en boucle */
-}
-main {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-
-}
-h3 {
-    color: #f3e521;
-    margin-top: 100px;
-}
-p {
-    color: azure;
-}
-h6 {
-    color: azure;
-    font-size: xx-large;
-}
-fieldset {
-    color: #f3e521;
-    margin-top: 100px;
-}
-form {
-    color: azure;
-}
-button {
-  background-color: #f81d1d;
-  font-family: cursive;
-  font-size:larger;
-}
-#error {
-    color: #6d0b0b;
+#regles {
+    color:#000000;
+    font-size:larger;
+    background-color: #ffffff91;
+    border-radius: 50px;
+    padding: 3%;
+    margin-inline: 15%;
 }
 .board {
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(4, 100px);
     grid-gap: 120px;
-    justify-content: center;
-    margin: 0 auto; /* Centre la grille */
+    justify-content:center;
     margin-top: 50px;
+    position:relative;
 }
 .card {
     width: 200px;
     height: 200px;
+    background-color: #ffffff;
+    background-image: url('../img/leaves-7368692_640.jpg'); /* Texture ou motif de bois */
+    border-radius: 15px;
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition: transform 0.6s;
-    border: 2px solid #333;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+
 }
 .card.flipped {
     transform: rotateY(180deg);
@@ -90,21 +90,80 @@ button {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 15px;
 }
 .back {
-    background-color: #f81d1d;
+    background-color: #795548; /* Marron bois */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: rotateY(180deg);
+    background-size: cover;
+}
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s; /* Transition pour l'effet de zoom */
 }
-
-.front {
-    background-color: #fa4343;
+fieldset {
+    margin-left: 145px;
+    margin-right: 145px;
+    padding: 70px;
+    background-color: #ffffff91;
+    color: #000000;
+    border-radius: 70px;
 }
-
+h4 {
+    font-size: xx-large;
+    margin-top: 1px;
+}
+input {
+    background-color: #ffeb3b86;
+}
+button {
+    background-color: #ffeb3b;
+    color: #2e7d32;
+    border: none;
+    padding: 12px 24px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #fbc02d;
+    transform: scale(1.1);
+}
+#error, #message {
+    color: #ad1616;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    margin-top: 0.1px;
+    font-style: oblique;
+}
+#forcePasswordFaible {
+    color: #000000;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f81d1d;
+}
+#forcePasswordFort {
+    color:#000000;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #80f321;
+}
+#forcePasswordMoyen {
+    color: #030303;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f3e521;
+}
 * {
-    background-color: #697c35;
+    box-sizing: border-box;
 }

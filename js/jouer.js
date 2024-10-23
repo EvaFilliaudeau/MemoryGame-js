@@ -21,6 +21,11 @@ function shuffle(array) {
 
 // Initialisation du jeu
 function initGame() {
+    matchedPairs = 0;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
     shuffle(cardsArray);
 
     cardsArray.forEach((imagePath) => {
@@ -63,7 +68,7 @@ function checkMatch() {
         disableCards();
         matchedPairs++;
 
-        if (matchedPairs === cardsArray.length / 2) {
+       if (matchedPairs === cardsArray.length / 2) {
     launchConfetti(); // Lancer les confettis
     setTimeout(() => {
         alert("BRAVO CHAMPION ! Pour relancer une partie, appuyez sur la barre d'espace !");
@@ -80,6 +85,7 @@ function launchConfetti() {
                 origin: { y: 0.6 }
             });
         }
+
 // Désactiver les cartes si elles correspondent
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
@@ -100,14 +106,13 @@ function unflipCards() {
 function resetBoard() {
     [firstCard, secondCard, lockBoard] = [null, null, false];
 }
+// Démarrer le jeu
+initGame();
 
-// Écouteur d'événement pour relancer le jeu avec la barre d'espace
-        window.addEventListener('keydown', function(event) {
-            if (event.code === 'Space') {
-                matchedPairs = 0; // Réinitialiser les paires correspondantes
-                initGame(); // Relancer le jeu
-            }
-        });
+const link = document.getElementById('replay');
 
-        // Démarrer le jeu
-        initGame();
+document.addEventListener('keydown', function(event) {
+if (event.key === ' ' || event.code === 'Space') {
+        location.reload();
+    }
+});

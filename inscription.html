@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon projet memory</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Mon memory</h1>
-            <nav>
-                <a href="index.html">ACCUEIL</a>
-                <a href="regle.html">REGLE DU JEU</a>
-                <a href="jouer.html">JOUER</a>
-                <a href="">INSCRIPTION</a>
-                <a href="compte.html">MON COMPTE</a>
-            </nav>
+      <h1>Mon memory</h1>
+      <nav>
+        <a href="index.html">ACCUEIL</a>
+        <a href="regle.html">REGLE DU JEU</a>
+        <a href="jouer.html">JOUER</a>
+        <a href="">INSCRIPTION</a>
+        <a href="compte.html">MON COMPTE</a>
+      </nav>
     </header>
-    <main>
-        <fieldset>
-            <legend>CREER UN COMPTE MEMORY :</legend>
-                <form action="/submit" method="post" id="signupForm">
-                    <label for="name">Nom d'utilisateur</label> <br>
-                        <input
-                        type="texte"
-                        id="username"
-                        name="username"
-                        required
-                        minlength="3"
-                        /> <br>
-                    <label for="email">Adresse mail</label> <br>
-                        <input
-                        type="email"
-                        id="email"
-                        required
-                        /> <br>
-                    <label for="password">Créez un mot de passe</label> <br>
-                        <input
-                        type="password"
-                        id="password"
-                        minlength="6"
-                        required
-                        /> <br>
-                            <label for="confirmPassword">Confirmez le mot de passe</label> <br>
-                                <input
-                                type="password"
-                                id="confirmPassword"
-                                minlength="6"
-                                required
-                            /> <br><br
-
-                    <label for="checkbox">Je souhaite m'abonner à la newsletter pour recevoir des jeux de mémoire</label>
-                        <input type="checkbox" name="newsletter" id="newsletter"/> <br><br>
-                    <button type="submit">S'ENREGISTRER</button>
-                        <span id="error"></span>
-            </form> <br>
-        </fieldset>
-    </main>
+    <fieldset>
+      <br />
+      <legend></legend>
+      <form action="/submit" method="post" id="signupForm">
+        <h4>CREER UN COMPTE MEMORY :</h4>
+        <label for="username">Nom d'utilisateur</label> <br />
+        <input
+          type="texte"
+          id="username"
+          name="username"
+          required
+          minlength="3"
+        />
+        <br /><br />
+        <label for="email">Adresse mail</label> <br />
+        <input type="email" id="email" required /> <br /><br />
+        <label for="newPassword">Créez un mot de passe</label> <br />
+        <input
+          type="password"
+          id="newPassword"
+          minlength="6"
+          autocomplete="on"
+          required
+        /><br /><br />
+        <label for="confirmPassword">Confirmez le mot de passe</label> <br />
+        <input
+          type="password"
+          id="confirmPassword"
+          minlength="6"
+          autocomplete="on"
+          required
+        />
+        <p id="forcePasswordFaible"></p>
+        <p id="forcePasswordMoyen"></p>
+        <p id="forcePasswordFort"></p>
+        <p id="error"></p>
+        <br />
+        <label for="checkbox"
+          >Je souhaite m'abonner à la newsletter pour recevoir des jeux de
+          mémoire</label
+        >
+        <input type="checkbox" name="newsletter" id="newsletter" />
+        <br /><br /><br />
+        <button type="submit">S'ENREGISTRER</button>
+      </form>
+    </fieldset>
+    <p id="message"></p>
     <script type="module" src="js/inscription.js"></script>
-</body>
+  </body>
 </html>
