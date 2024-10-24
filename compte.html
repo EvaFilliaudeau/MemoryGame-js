@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Mon memory</h1>
-      <nav>
+      <nav aria-label="barre de nav principale">
         <a href="index.html">ACCUEIL</a>
         <a href="regle.html">REGLE DU JEU</a>
         <a href="jouer.html">JOUER</a>
@@ -17,7 +17,29 @@
         <a href="">MON COMPTE</a>
       </nav>
     </header>
-   
-    <script type="module" src="js/inscription.js"></script>
+   <section>
+    <p id="welcomeMessage"></p>
+    <nav id="choixCompte" aria-label="barre de nav secondaire"">
+      <article>
+        <img src="../MemoryGame-js/img/feuilleMimi.png" alt="">
+        <p>Voir mes scores</p>
+      </article>
+        <article>
+          <img src="../MemoryGame-js/img/feuilleMimi.png" alt="">
+          <p>Me désabonner de la newletter</p>
+        </article>
+            <article>
+              <img src="../MemoryGame-js/img/feuilleMimi.png" alt="">
+              <p>Supprimer mon compte</p>
+            </article>
+              <article>
+                <img src="../MemoryGame-js/img/feuilleMimi.png" alt="">
+                <p>Me deconnecter</p>
+            </article>
+    </nav>
+   </section>
+    <script type="module" src="js/compteInscription.js"></script>
+    <script type="module" src="js/compteConnexion.js"></script>
+
   </body>
 </html>

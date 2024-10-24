@@ -15,12 +15,16 @@
                 <a href="regle.html">REGLE DU JEU</a>
                 <a href="jouer.html">JOUER</a>
                 <a href="inscription.html">INSCRIPTION</a>
-                <a href="compte.html">MON COMPTE</a>
+                <a href="connexion.html">MON COMPTE</a>
             </nav>
     </header>
+                <p id="counterCoups">Nombre de coups : 0</p>
         <div id="game-board" class="board">
         </div>
-            <button id="confettiButton" hidden >Lancer les Confettis</button> 
+            <div id="bravo">BRAVO CHAMPION !<br>🎉<br> <br>
+            <em>Pour relancer une partie, appuyez sur la touche espace</em></div>
     <script type="module" src="js/jouer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
 </body>
 </html>

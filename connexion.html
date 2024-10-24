@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon projet memory</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mon memory</h1>
+      <nav>
+        <a href="index.html">ACCUEIL</a>
+        <a href="regle.html">REGLE DU JEU</a>
+        <a href="jouer.html">JOUER</a>
+        <a href="inscription.html">INSCRIPTION</a>
+        <a href="">MON COMPTE</a>
+      </nav>
+    </header>
+    <section>
+      <form id="loginForm">
+        <label for="username">Nom d'utilisateur</label> <br />
+        <input
+          type="texte"
+          id="username"
+          name="username"
+          required
+        />
+        <br /><br />
+        <label for="password">Mot de passe</label> <br />
+        <input
+          type="password"
+          id="password"
+          autocomplete="on"
+          required
+        />
+        <br /><br>
+        <button type="submit" id="connexion">CONNEXION</button>
+      </form>
+      <p id="loginError"></p>
+    </section>
+    <script type="module" src="js/compteConnexion.js"></script>
+  </body>
+</html>

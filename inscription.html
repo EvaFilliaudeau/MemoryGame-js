@@ -14,13 +14,13 @@
         <a href="regle.html">REGLE DU JEU</a>
         <a href="jouer.html">JOUER</a>
         <a href="">INSCRIPTION</a>
-        <a href="compte.html">MON COMPTE</a>
+        <a href="connexion.html">MON COMPTE</a>
       </nav>
     </header>
     <fieldset>
       <br />
       <legend></legend>
-      <form action="/submit" method="post" id="signupForm">
+      <form id="signupForm">
         <h4>CREER UN COMPTE MEMORY :</h4>
         <label for="username">Nom d'utilisateur</label> <br />
         <input
@@ -59,11 +59,11 @@
           mémoire</label
         >
         <input type="checkbox" name="newsletter" id="newsletter" />
-        <br /><br /><br />
-        <button type="submit">S'ENREGISTRER</button>
+        <br />
+        <button type="submit" id="enregistrer">S'ENREGISTRER</button>
       </form>
+          <p id="message"></p>
     </fieldset>
-    <p id="message"></p>
     <script type="module" src="js/inscription.js"></script>
   </body>
 </html>

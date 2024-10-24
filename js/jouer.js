@@ -13,6 +13,7 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let matchedPairs = 0;
+let counter = 0;
 
 // Mélanger les cartes
 function shuffle(array) {
@@ -48,9 +49,7 @@ function initGame() {
 // Fonction pour retourner la carte
 function flipCard() {
     if (lockBoard || this === firstCard) return;
-
     this.classList.add('flipped');
-
     if (!firstCard) {
         firstCard = this;
         return;
@@ -68,23 +67,30 @@ function checkMatch() {
         disableCards();
         matchedPairs++;
 
-       if (matchedPairs === cardsArray.length / 2) {
-    launchConfetti(); // Lancer les confettis
-    setTimeout(() => {
-        alert("BRAVO CHAMPION ! Pour relancer une partie, appuyez sur la barre d'espace !");
-    }, 500); // Afficher le message après 0.5 seconde
-}
+
+        if (matchedPairs === cardsArray.length / 2) {
+            launchConfetti(); // Lancer les confettis
+            // Affiche le message de victoire
+            document.getElementById('bravo').style.display = 'block'; // Correction ici
+        }
     } else {
         unflipCards();
+                counter++;
+        document.getElementById('counterCoups').textContent = `Nombre de coups : ${counter}`;
     }
+    function launchConfetti() {
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
 }
-function launchConfetti() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
+
+confetti({
+  angle: randomInRange(55, 125),
+  spread: randomInRange(50, 70),
+  particleCount: randomInRange(50, 100),
+  origin: { y: 0.6 },
+});
+}
+}
 
 // Désactiver les cartes si elles correspondent
 function disableCards() {
