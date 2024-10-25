@@ -1,4 +1,6 @@
-document.getElementById("signupForm").addEventListener("submit", function (event) {
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault(); // Empêche la soumission du formulaire immédiatement
 
     let username = document.getElementById("username").value;
@@ -23,11 +25,18 @@ document.getElementById("signupForm").addEventListener("submit", function (event
       forcePasswordFaible.textContent = "Mot de passe faible";
       forcePasswordFort.textContent = "";
       forcePasswordMoyen.textContent = "";
-    } else if (newPassword.length >= 9 && hasNumber.test(newPassword) && hasSymbol.test(newPassword)) {
+    } else if (
+      newPassword.length >= 9 &&
+      hasNumber.test(newPassword) &&
+      hasSymbol.test(newPassword)
+    ) {
       forcePasswordFort.textContent = "Mot de passe fort";
       forcePasswordFaible.textContent = "";
       forcePasswordMoyen.textContent = "";
-    } else if (newPassword.length >= 6 && (hasNumber.test(newPassword) || hasSymbol.test(newPassword))) {
+    } else if (
+      newPassword.length >= 6 &&
+      (hasNumber.test(newPassword) || hasSymbol.test(newPassword))
+    ) {
       forcePasswordMoyen.textContent = "Mot de passe moyen";
       forcePasswordFaible.textContent = "";
       forcePasswordFort.textContent = "";
@@ -35,14 +44,14 @@ document.getElementById("signupForm").addEventListener("submit", function (event
 
     // Vérifications des règles de validation
     if (!hasNumber.test(newPassword)) {
-        error.textContent = "Le mot de passe doit contenir au moins un chiffre.";
-        return;
+      error.textContent = "Le mot de passe doit contenir au moins un chiffre.";
+      return;
     } else if (!hasSymbol.test(newPassword)) {
-        error.textContent = "Le mot de passe doit contenir au moins un symbole.";
-        return;
+      error.textContent = "Le mot de passe doit contenir au moins un symbole.";
+      return;
     } else if (newPassword !== confirmPassword) {
-        error.textContent = "Les mots de passe ne sont pas identiques.";
-        return;
+      error.textContent = "Les mots de passe ne sont pas identiques.";
+      return;
     }
 
     // Récupérer les utilisateurs stockés dans le Local Storage
@@ -52,26 +61,27 @@ document.getElementById("signupForm").addEventListener("submit", function (event
     let userExists = users.some((user) => user.email === email);
 
     if (userExists) {
-        // Si l'utilisateur existe, afficher un message d'erreur
-        document.getElementById("message").textContent = "Cet utilisateur est déjà inscrit !";
+      // Si l'utilisateur existe, afficher un message d'erreur
+      document.getElementById("message").textContent =
+        "Cet utilisateur est déjà inscrit !";
     } else {
-        // Sinon, créer un objet utilisateur et l'ajouter au tableau
-        let newUser = {
-            name: username,
-            email: email,
-            mdp: newPassword,
-        };
+      // Sinon, créer un objet utilisateur et l'ajouter au tableau
+      let newUser = {
+        name: username,
+        email: email,
+        mdp: newPassword,
+      };
 
-        // Ajouter le nouvel utilisateur au tableau
-        users.push(newUser);
+      // Ajouter le nouvel utilisateur au tableau
+      users.push(newUser);
 
-        // Stocker le tableau mis à jour dans le Local Storage
-        localStorage.setItem("users", JSON.stringify(users));
+      // Stocker le tableau mis à jour dans le Local Storage
+      localStorage.setItem("users", JSON.stringify(users));
 
-        // Stocker le dernier utilisateur inscrit pour la page compte
-        localStorage.setItem('currentUser', username); 
-    
-        // Rediriger vers la page de compte
-        window.location.href = "./compte.html";
+      // Stocker le dernier utilisateur inscrit pour la page compte
+      localStorage.setItem("currentUser", username);
+
+      // Rediriger vers la page de compte
+      window.location.href = "./profil.html";
     }
-});
+  });
